@@ -1,38 +1,133 @@
-.App {
+body {
+  font-family: "Work Sans", sans-serif;
+  background-color: #fbf7f7;
+}
+
+ul {
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: 24px;
+  list-style: none;
+}
+
+.row h1 {
+  padding-top: 20px;
+  text-align: center;
+  color: #2f1b41;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.temperature-container {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.units,
+#temperature {
+  color: #2f1b41;
+  font-size: 30px;
+  opacity: 0.7;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.active {
+  color: #2f1b41;
+  cursor: default;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.active:hover {
+  color: #2f1b41;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+#icon {
+  width: 60px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#description {
+  font-size: 20px;
+  color: #2f1b41;
+  opacity: 0.7;
+  text-transform: capitalize;
+  padding-left: 18px;
+}
+
+.container {
+  margin: 120px auto;
+  max-width: 800px;
+  border: 3px solid #ffcab0;
+  border-radius: 20px;
+  box-shadow: 0px 7px 7px 0 rgb(37 39 89 / 8%);
+  background-color: antiquewhite;
+}
+
+#date {
+  text-align: center;
+  color: #2f1b41;
+  opacity: 0.8;
+  line-height: 24px;
+  padding-bottom: 8px;
+  font-size: 22px;
+}
+
+#weather-icon-forecast {
+  width: 60px;
+  display: block;
+  margin: 0 auto;
+}
+
+ul {
+  padding-top: 20px;
+  color: #2f1b41;
+  font-size: 20px;
+  opacity: 0.7;
+  line-height: 36px;
+}
+
+.form-control {
+  border: 1px solid #ffcab0;
+  color: #2f1b41;
+  margin-left: 30px;
+}
+
+.row {
+  padding: 0 10px;
+}
+
+.form-group {
+  padding: 20px 10px;
+}
+
+.form-control:focus {
+  border: 1px solid #ffcab0;
+  box-shadow: 0px 7px 7px 0 rgb(37 39 89 / 8%);
+}
+
+.form-control:hover {
+  border: 1px solid #ffcab0;
+}
+
+.btn {
+  background-color: #ed9f66;
+  border: 1px solid #876464;
+  color: #876464;
+  margin-left: 20px;
+  transition: all 200ms ease-in-out;
+}
+
+.btn:focus {
+  background-color: #ed9f66;
+  border: 1px solid #876464;
+  box-shadow: 0px 7px 7px 0 rgb(37 39 89 / 8%);
+}
+
+.btn:hover {
+  background-color: #876464;
+  border: 1px solid #ed9f66;
+  color: #ed9f66;
 }
