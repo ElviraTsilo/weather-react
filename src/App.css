@@ -59,7 +59,7 @@ a:hover {
 }
 
 .container {
-  margin: 120px auto;
+  margin: 80px auto;
   max-width: 800px;
   border: 3px solid #ffcab0;
   border-radius: 20px;
@@ -132,3 +132,9 @@ ul {
   border: 1px solid #ed9f66;
   color: #ed9f66;
 }
+
+footer {
+ margin: 80px auto;
+ max-width: 800px;
+}
+

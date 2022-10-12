@@ -17,6 +17,25 @@ export default function App() {
         </div>
         <SearchForm />
       </div>
+      <footer>
+        This project was coded by Elvira Tsilo and is {" "}
+        <a
+          href="https://github.com/ElviraTsilo/weather-react/tree/master/src"
+          target="_blanck"
+          rel="noopener noreferrer"
+        >
+          {" "}
+          open-sourced on GitHub {" "}
+        </a>
+        and {" "}
+        <a
+          href="https://gleeful-liger-d9d4fa.netlify.app/"
+          target="_blanck"
+          rel="noopener noreferrer"
+        >
+          hosted on Netlify
+        </a>
+      </footer>
     </div>
   );
 }
