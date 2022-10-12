@@ -1,9 +1,12 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
+
 import Temperature from "./Temperature";
 import SearchForm from "./SearchForm";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <div className="container">
@@ -17,5 +20,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

@@ -6,7 +6,7 @@ export default function Humidity() {
     <div className="Humidity">
       <ul>
         <li className="humidity">Humidity: 80%</li>
-        <li className="wind">Wind: 1.75 m/sec</li>
+        <li className="wind">Wind: 4km/h</li>
       </ul>
     </div>
   );
