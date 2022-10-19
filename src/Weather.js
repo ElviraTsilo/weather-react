@@ -9,13 +9,14 @@ export default function Weather(props) {
   const [weather, setWeather] = useState("null");
   const [ready, setReady] = useState(false);
   function displayTemperature(response) {
+    console.log(response.data.wind.speed);
     setWeather({
-      temperature: Math.round(response.data.main.temp),
-      description: response.data.weather[0].description,
-      humidity: response.data.main.humidity,
+      temperature: Math.round(response.data.temperature.current),
+      description: response.data.condition.description,
+      humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
-      date: new Date(response.data.dt * 1000),
-      image: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      date: new Date(response.data.time * 1000),
+      image: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
     });
     setReady(true);
   }
@@ -26,7 +27,9 @@ export default function Weather(props) {
         <div className="container">
           <div className="row">
             <h1>{props.city}</h1>
-            <h2 id="date"><CurrentData date={weather.date} /></h2>
+            <h2 id="date">
+              <CurrentData date={weather.date} />
+            </h2>
             <div className="row">
               <div className="col-6">
                 <div className="temperature-container">
@@ -104,9 +107,9 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    let apiKey = "fa2a49395aed41c446ad27757ee747da";
+    let apiKey = "tfbadccdc2af22cbfee54o9361e05613";
     let unit = "metric";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=${unit}`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.city}&key=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(displayTemperature);
 
     return "Loading...";
