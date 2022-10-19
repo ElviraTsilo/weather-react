@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CurrentData from "./CurrentData";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
@@ -13,6 +14,7 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
+      date: new Date(response.data.dt * 1000),
       image: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
     setReady(true);
@@ -24,7 +26,7 @@ export default function Weather(props) {
         <div className="container">
           <div className="row">
             <h1>{props.city}</h1>
-            <h2 id="date">Sunday 12:09</h2>
+            <h2 id="date"><CurrentData date={weather.date} /></h2>
             <div className="row">
               <div className="col-6">
                 <div className="temperature-container">
@@ -41,7 +43,7 @@ export default function Weather(props) {
               <div className="col-6">
                 <ul>
                   <li className="humidity">Humidity: {weather.humidity}%</li>
-                  <li className="wind">Wind: {weather.wind}km/h</li>
+                  <li className="wind">Wind: {weather.wind} km/h</li>
                 </ul>
               </div>
             </div>
