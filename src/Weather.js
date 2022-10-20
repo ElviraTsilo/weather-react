@@ -1,61 +1,58 @@
 import React, { useState } from "react";
-import CurrentData from "./CurrentData";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
   const [weather, setWeather] = useState("null");
   const [ready, setReady] = useState(false);
+  const [city, setCity] = useState(props.city);
   function displayTemperature(response) {
-    console.log(response.data.wind.speed);
     setWeather({
       temperature: Math.round(response.data.temperature.current),
       description: response.data.condition.description,
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
       date: new Date(response.data.time * 1000),
+      city: response.data.city,
       image: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
     });
     setReady(true);
+  }
+  
+  function search() {
+    let apiKey = "tfbadccdc2af22cbfee54o9361e05613";
+    let unit = "metric";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
+    axios.get(apiUrl).then(displayTemperature);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
   }
 
   if (ready) {
     return (
       <div className="Weather">
         <div className="container">
-          <div className="row">
-            <h1>{props.city}</h1>
-            <h2 id="date">
-              <CurrentData date={weather.date} />
-            </h2>
-            <div className="row">
-              <div className="col-6">
-                <div className="temperature-container">
-                  <img
-                    src={weather.image}
-                    alt={weather.description}
-                    id="icon"
-                  />
-                  <span id="temperature">{weather.temperature}</span>
-                  <span className="units">°C</span>
-                  <div id="description">{weather.description}</div>
-                </div>
-              </div>
-              <div className="col-6">
-                <ul>
-                  <li className="humidity">Humidity: {weather.humidity}%</li>
-                  <li className="wind">Wind: {weather.wind} km/h</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <form className="search-form" id="search-form">
+          <WeatherInfo data={weather} />
+          <form
+            onSubmit={handleSubmit}
+            className="search-form"
+            id="search-form"
+          >
             <div className="row">
               <div className="col-6">
                 <div className="form-group form-group-warning">
                   <input
+                    onChange={handleCityChange}
                     type="text"
                     className="form-control"
                     placeholder="Enter your city"
@@ -107,11 +104,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    let apiKey = "tfbadccdc2af22cbfee54o9361e05613";
-    let unit = "metric";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.city}&key=${apiKey}&units=${unit}`;
-    axios.get(apiUrl).then(displayTemperature);
-
+    search();
     return "Loading...";
   }
 }
