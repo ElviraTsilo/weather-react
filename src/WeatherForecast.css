@@ -1,0 +1,33 @@
+.WeatherForecast .row.days-row {
+  padding: 20px 30px;
+}
+
+.WeatherForecast .card-title {
+  color: #2f1b41;
+  font-size: 18px;
+  font-weight: 1000;
+  text-align: center;
+  min-height: 45px;
+}
+
+.WeatherForecast .card-subtitle {
+  color: #2f1b41 !important;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.WeatherForecast .card-text {
+  text-align: center;
+  font-size: 24px;
+}
+
+.WeatherForecast .card-body {
+  border: 2px solid #ffcab0;
+  border-radius: 18px;
+  background-color: #ffebbb;
+}
+
+.WeatherForecast .card {
+  border: none;
+  background-color: antiquewhite;
+}
