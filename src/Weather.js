@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   const [weather, setWeather] = useState("null");
@@ -81,6 +82,7 @@ export default function Weather(props) {
               </div>
             </div>
           </form>
+          <WeatherForecast />
         </div>
         <footer>
           This project was coded by Elvira Tsilo and is{" "}
