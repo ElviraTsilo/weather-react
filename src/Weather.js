@@ -11,8 +11,10 @@ export default function Weather(props) {
   const [ready, setReady] = useState(false);
   const [city, setCity] = useState(props.city);
   function displayTemperature(response) {
+  
     setWeather({
       temperature: Math.round(response.data.temperature.current),
+      coordinates: response.data.coordinates,
       description: response.data.condition.description,
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
@@ -82,7 +84,7 @@ export default function Weather(props) {
               </div>
             </div>
           </form>
-          <WeatherForecast />
+          <WeatherForecast coordinates={weather.coordinates}/>
         </div>
         <footer>
           This project was coded by Elvira Tsilo and is{" "}
