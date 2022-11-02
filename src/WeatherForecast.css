@@ -31,3 +31,7 @@
   border: none;
   background-color: antiquewhite;
 }
+
+.WeatherForecast img {
+  width: 72px;
+}

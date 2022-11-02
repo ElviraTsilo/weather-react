@@ -6,19 +6,27 @@ import "./WeatherForecast.css";
 export default function WeatherForecast(props) {
   const [loaded, setLoaded] = useState(false);
   const [weatherForecast, setWeatherForecast] = useState(null);
+  
   function handleRespons(response) {
     setWeatherForecast(response.data.daily);
     setLoaded(true);
-    console.log(response.data.daily);
   }
 
   if (loaded) {
     return (
       <div className="WeatherForecast">
         <div className="row days-row">
-          <div className="col">
-            <WeatherForecastDay data={weatherForecast[0]}/>
-          </div>
+          {weatherForecast.map(function (dailyForecast, index) {
+            if (index < 5) {
+              return (
+                <div className="col" key={index}>
+                  <WeatherForecastDay data={dailyForecast} />
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })}
         </div>
       </div>
     );

@@ -4,7 +4,15 @@ export default function WeatherForecastDay(props) {
   function getDate() {
     let date = new Date(props.data.time * 1000);
     let day = date.getDay();
-    let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
     return days[day];
   }
 
@@ -23,8 +31,8 @@ export default function WeatherForecastDay(props) {
         </h6>
         <p className="card-text">
           <img
-            src={`http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${props.data.condition.icon}.png`}
-            alt= {props.data.condition.description}
+            src={props.data.condition.icon_url}
+            alt={props.data.condition.description}
           />
         </p>
       </div>
