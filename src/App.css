@@ -59,7 +59,7 @@ a:hover {
 }
 
 .container {
-  margin: 80px auto;
+  margin: 80px auto 0;
   max-width: 800px;
   border-radius: 20px;
   box-shadow: 0px 7px 7px 0 rgb(37 39 89 / 8%);
@@ -121,8 +121,8 @@ ul {
     44.8deg,
     rgba(255, 136, 102, 0.67) -53.1%,
     rgba(255, 221, 136, 0.28) 49%
-  );;
-  border: 2px solid  #ffb0b0;
+  );
+  border: 2px solid #ffb0b0;
   color: #2f1b41;
   transition: all 200ms ease-in-out;
 }
@@ -140,6 +140,6 @@ ul {
 }
 
 footer {
-  margin: 80px auto;
+  margin: 30px auto 0;
   max-width: 800px;
 }
