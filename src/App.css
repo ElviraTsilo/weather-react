@@ -61,10 +61,13 @@ a:hover {
 .container {
   margin: 80px auto;
   max-width: 800px;
-  border: 3px solid #ffcab0;
   border-radius: 20px;
   box-shadow: 0px 7px 7px 0 rgb(37 39 89 / 8%);
-  background-color: antiquewhite;
+  background: linear-gradient(
+    44.8deg,
+    rgba(255, 136, 102, 0.67) -53.1%,
+    rgba(255, 221, 136, 0.28) 49%
+  );
 }
 
 #date {
@@ -91,9 +94,9 @@ ul {
 }
 
 .form-control {
-  border: 1px solid #ffcab0;
+  border: 2px solid #ffcab0;
   color: #2f1b41;
-  margin-left: 30px;
+  margin-left: 43px;
 }
 
 .row {
@@ -114,25 +117,27 @@ ul {
 }
 
 .btn {
-  background-color: #ed9f66;
-  border: 1px solid #876464;
-  color: #876464;
-  margin-left: 20px;
+  background: linear-gradient(
+    44.8deg,
+    rgba(255, 136, 102, 0.67) -53.1%,
+    rgba(255, 221, 136, 0.28) 49%
+  );;
+  border: 2px solid  #ffb0b0;
+  color: #2f1b41;
   transition: all 200ms ease-in-out;
 }
 
 .btn:focus {
-  background-color: #ed9f66;
-  border: 1px solid #876464;
+  background-color: #ed6f6a;
+  border: 1px solid #f24a37;
   box-shadow: 0px 7px 7px 0 rgb(37 39 89 / 8%);
 }
 
 .btn:hover {
-  background-color: #876464;
-  border: 1px solid #ed9f66;
-  color: #ed9f66;
+  background-color: #ed6f6a;
+  border: 1px solid #f24a37;
+  color: #2f1b41;
 }
-
 
 footer {
   margin: 80px auto;

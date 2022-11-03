@@ -21,15 +21,14 @@
   font-size: 24px;
 }
 
-.WeatherForecast .card-body {
-  border: 2px solid #ffcab0;
-  border-radius: 18px;
-  background-color: #ffebbb;
-}
-
 .WeatherForecast .card {
-  border: none;
-  background-color: antiquewhite;
+  border: 2px solid #ffb0b0;
+  border-radius: 24px;
+  background: linear-gradient(
+    44.8deg,
+    rgba(255, 136, 102, 0.67) -53.1%,
+    rgba(255, 221, 136, 0.28) 49%
+  );
 }
 
 .WeatherForecast img {
